@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="My Example Installer" Language="1033" Version="1.0.0.0" Manufacturer="ICT Student" UpgradeCode="e937c760-cc77-4e74-8529-067c605651b2">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="My Example Installer" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="My Example Installer" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ExampleDesktop.exe" Guid="55734025-AA82-4B6B-83F2-0E5A87502FA7">
+        <File Id="ExampleDesktop.exe" Name="ExampleDesktop.exe" Source= "$(var.WindowsFormsApp1.TargetDir)WindowsFormsApp1.exe"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

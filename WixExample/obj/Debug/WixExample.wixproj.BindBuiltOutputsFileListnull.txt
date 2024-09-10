@@ -1,0 +1,2 @@
+C:\Users\Nahid Tanjum\source\repos\WindowsFormsApp1\WixExample\bin\Debug\WixExample.msi
+C:\Users\Nahid Tanjum\source\repos\WindowsFormsApp1\WixExample\bin\Debug\WixExample.wixpdb
